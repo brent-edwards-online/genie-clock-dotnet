@@ -46,13 +46,13 @@
     <Compile Include="Application\IGenieClock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Screen\FaceDigitGenerator.cs" />
-    <Compile Include="Screen\IClockFacePoint.cs" />
-    <Compile Include="Screen\IFaceDigitGenerator.cs" />
-    <Compile Include="Screen\IScreenGenerator.cs" />
-    <Compile Include="Screen\ITimeParser.cs" />
-    <Compile Include="Screen\ScreenGenerator.cs" />
-    <Compile Include="Screen\TimeParser.cs" />
+    <Compile Include="Clock\FaceDigitGenerator.cs" />
+    <Compile Include="Clock\IClockFacePoint.cs" />
+    <Compile Include="Clock\IFaceDigitGenerator.cs" />
+    <Compile Include="Clock\IScreenGenerator.cs" />
+    <Compile Include="Clock\ITimeParser.cs" />
+    <Compile Include="Clock\ScreenGenerator.cs" />
+    <Compile Include="Clock\TimeParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
