@@ -36,11 +36,11 @@ namespace GenieClock.Test
             ClockFacePoint[] points = new ClockFacePoint[0];
 
             var actual = _generator.Generate(points);
-            for(var idx = 0; idx < 11; idx++)
+            for(var row = 0; row < 11; row++)
             {
-                for (var jdx = 0; jdx < 15; jdx++)
+                for (var col = 0; col < 15; col++)
                 {
-                    Assert.AreEqual(' ', actual[idx, jdx]);
+                    Assert.AreEqual(' ', actual[row, col]);
                 }
             }
         }
@@ -50,13 +50,40 @@ namespace GenieClock.Test
         public void CanGenerateABasicScreen()
         {
             var actual = _generator.Generate(null);
-            for (var idx = 0; idx < 11; idx++)
+            for (var row = 0; row < 11; row++)
             {
-                for (var jdx = 0; jdx < 15; jdx++)
+                for (var col = 0; col < 15; col++)
                 {
-                    Assert.AreEqual(' ', actual[idx, jdx]);
+                    Assert.AreEqual(' ', actual[row, col]);
                 }
             }
+        }
+
+        [TestMethod]
+        [TestCategory("Test Screen Generator")]
+        public void CanPlaceAtCorrectPlaceDigitOnTheScreen()
+        {
+            ClockFacePoint[] points = new ClockFacePoint[1];
+            points[0].x = 5;
+            points[0].y = 10;
+            points[0].character = 'h';
+
+            var actual = _generator.Generate(points);
+            for (var row = 0; row < 11; row++)
+            {
+                for (var col = 0; col < 15; col++)
+                {
+                    if(row == 10 && col == 5)
+                    {
+                        Assert.AreEqual('h', actual[row, col]);
+                    }
+                    else
+                    {
+                        Assert.AreEqual(' ', actual[row, col]);
+                    }
+                }
+            }
+            
         }
 
 

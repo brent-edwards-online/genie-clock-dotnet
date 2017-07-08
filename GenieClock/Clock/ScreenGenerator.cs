@@ -11,11 +11,11 @@ namespace GenieClock.Screen
         public char[,] Generate(ClockFacePoint[] points)
         {
             var result = new char[11,15];
-            for( var idx = 0; idx < 11; idx++)
+            for( var row = 0; row < 11; row++)
             {
-                for (var jdx = 0; jdx < 15; jdx++)
+                for (var col = 0; col < 15; col++)
                 {
-                    result[idx, jdx] = ' ';
+                    result[row, col] = ' ';
                 }
             }
 

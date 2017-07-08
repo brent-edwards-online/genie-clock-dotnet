@@ -25,7 +25,7 @@ namespace GenieClock.Screen
             result[11] = new ClockFacePoint(4, 1, 'o');
 
             var hourPosition = hour % 12;
-            var minutePosition = (minute - (minute % 5))/ 5;
+            var minutePosition = ((minute - (minute % 5))/ 5) % 12;
             if(minutePosition == hourPosition)
             {
                 result[hourPosition].character = 'x';
