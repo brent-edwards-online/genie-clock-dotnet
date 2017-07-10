@@ -44,13 +44,13 @@ namespace GenieClock.Application
                         {
                             var points = faceGenerator.Generate(timeValues.Item1, timeValues.Item2);
                             var screen = generator.Generate(points);
-                            var dimx = screen.GetLongLength(0);
-                            var dimy = screen.GetLongLength(1);
-                            for (var x = 0; x < dimx; x++)
+                            var rows = screen.GetLongLength(0);
+                            var cols = screen.GetLongLength(1);
+                            for (var row = 0; row < rows; row++)
                             {
-                                for (var y = 0; y < dimy; y++)
+                                for (var col = 0; col < cols; col++)
                                 {
-                                    Console.Write(screen[x, y]);
+                                    Console.Write(screen[row, col]);
                                 }
                                 Console.WriteLine("");
                             }
